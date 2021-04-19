@@ -17,3 +17,7 @@
 
 
 #If you don't find the headfile "thinkgear64.h" and "thinkgear64.dll", there are some file you can download .
+
+
+#You also need to install the Mingw 64(it can be found from the matlab add-one).
+
