@@ -1,9 +1,7 @@
 # Neurosky-mindwave-mobile2-contol-machine
 
 
-#We can use neurosky mindwave mobile2 to detect strength of our eyeblink, accordingly, I use this product with Matlab to design a device that can help disable people eat food.
-
-
+#We can use neurosky mindwave mobile2 to detect time interval of our eyeblink, accordingly, and then I use this product with Matlab to design a device that can recognize the difference with time interval, accordingly I can help people who cannot express their thoughts by the tool.
 #Neurosky mindwave mobile2  https://www.neurosky.com.tw/%E5%85%A8%E6%96%B0%E6%94%B9%E6%AC%BEmindwave-mobile-2%E4%B8%8A%E5%B8%82%E4%BA%86/
 
 
