@@ -7,7 +7,7 @@ close all
 
 data = zeros(1,256);    %preallocate buffer
 
-portnum1 =   3;   %COM Port #
+portnum1 =   4;   %COM Port #
 comPortName1 = sprintf('\\\\.\\COM%d', portnum1);
 
 

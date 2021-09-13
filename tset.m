@@ -22,7 +22,7 @@ function varargout = tset(varargin)
 
 % Edit the above text to modify the response to help tset
 
-% Last Modified by GUIDE v2.5 15-Apr-2021 21:46:58
+% Last Modified by GUIDE v2.5 07-Sep-2021 14:39:26
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -104,45 +104,35 @@ function uibuttongroup1_DeleteFcn(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --------------------------------------------------------------------
-function Untitled_1_Callback(hObject, eventdata, handles)
-% hObject    handle to Untitled_1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(~, ~, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-a=imread('漢堡.jpg');
 axes(handles.axes1);
+a=imread('rice.jpg');
 imshow(a);
+
+
 
 % --- Executes on button press in pushbutton3.
 function pushbutton3_Callback(~, ~, handles)
 % hObject    handle to pushbutton3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-a=imread('薯條.jpg');
 axes(handles.axes1);
-imshow(a);
+b=imread('vegetable.jpg');
+imshow(b);
 
 % --- Executes on button press in pushbutton4.
 function pushbutton4_Callback(~, ~, handles)
 % hObject    handle to pushbutton4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-a=imread('可樂.jpg');
- axes(handles.axes1);
-imshow(a);
-
-
-% --- Executes on button press in pushbutton5.
-function pushbutton5_Callback(~, ~, ~)
-% hObject    handle to pushbutton5 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+axes(handles.axes1);
+c=imread('meat.jpg');
+imshow(c);
 
 
 % --- Executes on button press in pushbutton6.
@@ -152,30 +142,76 @@ function pushbutton6_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 %  readeyeblink
  global time2
+
+ while 1
+ 
 while 1
-pushbutton2_Callback(@pushbutton2_Callback, eventdata, handles);
+ pushbutton2_Callback(@pushbutton2_Callback, eventdata, handles);
  pause(0.5);
-readeyeblink
-if time2<0.5
-    pushbutton2_Callback(@pushbutton2_Callback, eventdata, handles);
+ axes(handles.axes3);
+readeyeblink;
+k=length(time2);
+if time2(k)<0.5
+   axes(handles.axes2);
+   robot_1; 
     break
 end
- pushbutton3_Callback(@pushbutton3_Callback, eventdata, handles);
-pause(0.5);
- readeyeblink
- if time2<0.5  
-      pushbutton3_Callback(@pushbutton3_Callback, eventdata, handles);
-    break
-end
- pushbutton4_Callback(@pushbutton4_Callback, eventdata, handles);
-pause(0.5);
-  readeyeblink
- if time2<0.5
-      pushbutton4_Callback(@pushbutton4_Callback, eventdata, handles);
+   pushbutton3_Callback(@pushbutton3_Callback, eventdata, handles);
+   pause(0.5);
+   axes(handles.axes3);
+ readeyeblink;
+k=length(time2);
+ if time2(k)<0.5  
+       axes(handles.axes2);
+     robot_2;
     break
  end
-
+pushbutton4_Callback(@pushbutton4_Callback, eventdata, handles);
+pause(0.5); 
+axes(handles.axes3);
+  readeyeblink;
+  k=length(time2);
+ if time2(k)<0.5
+       axes(handles.axes2);
+     robot_3;
+    break
+ end
+ 
 end
 
+ end
 
-pause(1);
+
+% --------------------------------------------------------------------
+function Menu_Callback(hObject, eventdata, handles)
+% hObject    handle to Menu (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes during object creation, after setting all properties.
+function axes1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to axes1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: place code in OpeningFcn to populate axes1
+
+
+% --- Executes during object creation, after setting all properties.
+function axes2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to axes2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: place code in OpeningFcn to populate axes2
+
+
+% --- Executes on button press in pushbutton8.
+function pushbutton8_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton8 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+clear all;
+clc;
+close;
